@@ -23,7 +23,7 @@ Wiki:
 https://yildiz.atlassian.net/wiki
 
 Quality report:
-https://sonarqube.com/overview?id=be.yildiz-games:module-database-postgresql
+https://sonarcloud.io/dashboard?id=be.yildiz-games%3Amodule-database-postgresql
 
 ## License
 
