@@ -23,6 +23,12 @@
  */
 
 module be.yildizgames.module.database.postgresql {
+    requires java.sql;
+
+    requires be.yildizgames.module.database;
+
+    requires org.jooq;
+    requires postgresql;
 
     exports be.yildizgames.module.database.postgresql;
 }
