@@ -21,55 +21,21 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE  SOFTWARE.
  *
  */
-
 package be.yildizgames.module.database.postgresql;
 
-import be.yildizgames.module.database.BaseDatabaseSystem;
-import be.yildizgames.module.database.DatabaseConnectionProviderFactory;
-import be.yildizgames.module.database.DriverProvider;
 import be.yildizgames.module.database.QueryBuilder;
-import org.jooq.SQLDialect;
-import org.postgresql.Driver;
 
-/**
- * @author Grégory Van den Borre
- */
-public class PostgresqlSystem extends BaseDatabaseSystem {
+public class PostgresqlQueryBuilder extends QueryBuilder {
 
-    public static final String KEY = "postgres";
-
-    private final DriverProvider driverProvider = Driver::new;
-
-    private PostgresqlSystem() {
-        super("jdbc:postgresql://${1}:${2}/${0}");
-    }
-
-    public static void support() {
-        DatabaseConnectionProviderFactory.getInstance().addSystem(KEY, new PostgresqlSystem());
+    @Override
+    public QueryBuilder selectAllFrom(String table) {
+        this.append("SELECT * FROM " + table + " ");
+        return this;
     }
 
     @Override
-    public SQLDialect getDialect() {
-        return SQLDialect.POSTGRES;
-    }
-
-    @Override
-    public String getDriver() {
-        return "org.postgresql.Driver";
-    }
-
-    @Override
-    public DriverProvider getDriverProvider() {
-        return this.driverProvider;
-    }
-
-    @Override
-    public QueryBuilder createBuilder() {
-        return new PostgresqlQueryBuilder();
-    }
-
-    @Override
-    public boolean requirePool() {
-        return true;
+    public QueryBuilder limit(int number) {
+        this.append("LIMIT " + number + " ");
+        return this;
     }
 }
