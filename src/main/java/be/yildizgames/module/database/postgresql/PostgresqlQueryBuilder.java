@@ -25,6 +25,9 @@ package be.yildizgames.module.database.postgresql;
 
 import be.yildizgames.module.database.QueryBuilder;
 
+/**
+ * @author Grégory Van den Borre
+ */
 public class PostgresqlQueryBuilder extends QueryBuilder {
 
     @Override
@@ -34,7 +37,7 @@ public class PostgresqlQueryBuilder extends QueryBuilder {
     }
 
     @Override
-    public QueryBuilder limit(int number) {
+    public final QueryBuilder limit(int number) {
         this.append("LIMIT " + number + " ");
         return this;
     }

@@ -24,6 +24,7 @@
 
 /**
  * Contains the classes to connect to a postgres system.
+ *
  * @author Grégory Van den Borre
  */
 package be.yildizgames.module.database.postgresql;

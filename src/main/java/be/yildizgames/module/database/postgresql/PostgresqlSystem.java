@@ -69,7 +69,7 @@ public class PostgresqlSystem extends BaseDatabaseSystem {
     }
 
     @Override
-    public boolean requirePool() {
+    public final boolean requirePool() {
         return true;
     }
 }
