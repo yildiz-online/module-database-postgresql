@@ -41,4 +41,10 @@ public class PostgresqlQueryBuilder extends QueryBuilder {
         this.append("LIMIT " + number + " ");
         return this;
     }
+
+    @Override
+    public final QueryBuilder selectAllFrom(String a, String b) {
+        this.append("");
+        return this;
+    }
 }
