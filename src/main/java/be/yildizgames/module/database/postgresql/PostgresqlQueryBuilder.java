@@ -43,8 +43,7 @@ public class PostgresqlQueryBuilder extends QueryBuilder {
     }
 
     @Override
-    public final QueryBuilder selectAllFrom(String a, String b) {
-        this.append("");
-        return this;
+    public final QueryBuilder selectAllFrom(String schema, String table) {
+        return this.selectAllFrom(schema + "." + table);
     }
 }
