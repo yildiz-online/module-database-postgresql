@@ -22,7 +22,7 @@
  *
  */
 
-module be.yildizgames.module.database.postgresql {
+open module be.yildizgames.module.database.postgresql {
     requires java.sql;
 
     requires be.yildizgames.module.database;

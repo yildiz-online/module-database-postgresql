@@ -39,14 +39,14 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 /**
  * @author Grégory Van den Borre
  */
-public class PostgresqlSystemTest {
+class PostgresqlSystemTest {
 
     @Nested
-    public class Support {
+    class Support {
 
         @Disabled
         @Test
-        public void happyFlow() throws SQLException {
+        void happyFlow() throws SQLException {
             PostgresqlSystem.support();
             DbProperties properties = new PostgresProperties();
             DataBaseConnectionProvider dcp = DatabaseConnectionProviderFactory.getInstance().create(properties);
