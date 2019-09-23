@@ -41,7 +41,7 @@ public class PostgresqlSystem extends BaseDatabaseSystem {
     private final DriverProvider driverProvider = Driver::new;
 
     private PostgresqlSystem() {
-        super("jdbc:postgresql://${1}:${2}/${0}");
+        super("jdbc:postgresql://{1}:{2}/{0}");
     }
 
     public static void support() {
