@@ -32,8 +32,6 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
-import java.sql.SQLException;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
@@ -46,7 +44,7 @@ class PostgresqlSystemTest {
 
         @Disabled
         @Test
-        void happyFlow() throws SQLException {
+        void happyFlow() {
             PostgresqlSystem.support();
             DbProperties properties = new PostgresProperties();
             DataBaseConnectionProvider dcp = DatabaseConnectionProviderFactory.getInstance().create(properties);
