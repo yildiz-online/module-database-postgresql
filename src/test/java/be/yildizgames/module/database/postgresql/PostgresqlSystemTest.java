@@ -27,7 +27,6 @@ package be.yildizgames.module.database.postgresql;
 import be.yildizgames.module.database.DataBaseConnectionProvider;
 import be.yildizgames.module.database.DatabaseConnectionProviderFactory;
 import be.yildizgames.module.database.DbProperties;
-import org.jooq.SQLDialect;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
@@ -49,7 +48,6 @@ class PostgresqlSystemTest {
             DbProperties properties = new PostgresProperties();
             DataBaseConnectionProvider dcp = DatabaseConnectionProviderFactory.getInstance().create(properties);
 
-            assertEquals(SQLDialect.POSTGRES, dcp.getDialect());
             assertEquals("org.postgresql.Driver", dcp.getDriver());
         }
     }

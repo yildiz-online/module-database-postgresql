@@ -27,7 +27,6 @@ open module be.yildizgames.module.database.postgresql {
 
     requires be.yildizgames.module.database;
 
-    requires org.jooq;
     requires org.postgresql.jdbc;
 
     provides be.yildizgames.module.database.DatabaseSystemRegisterer

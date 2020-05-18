@@ -28,7 +28,6 @@ import be.yildizgames.module.database.BaseDatabaseSystem;
 import be.yildizgames.module.database.DatabaseConnectionProviderFactory;
 import be.yildizgames.module.database.DriverProvider;
 import be.yildizgames.module.database.QueryBuilder;
-import org.jooq.SQLDialect;
 import org.postgresql.Driver;
 
 /**
@@ -46,11 +45,6 @@ public class PostgresqlSystem extends BaseDatabaseSystem {
 
     public static void support() {
         DatabaseConnectionProviderFactory.getInstance().addSystem(KEY, new PostgresqlSystem());
-    }
-
-    @Override
-    public SQLDialect getDialect() {
-        return SQLDialect.POSTGRES;
     }
 
     @Override
