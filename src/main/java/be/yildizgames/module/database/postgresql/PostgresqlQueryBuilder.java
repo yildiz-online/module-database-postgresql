@@ -28,11 +28,15 @@ import be.yildizgames.module.database.QueryBuilder;
 /**
  * @author Grégory Van den Borre
  */
-public class PostgresqlQueryBuilder extends QueryBuilder {
+class PostgresqlQueryBuilder extends QueryBuilder {
+
+    PostgresqlQueryBuilder(String table) {
+        super(table);
+    }
 
     @Override
-    public QueryBuilder selectAllFrom(String table) {
-        this.append("SELECT * FROM " + table + " ");
+    public QueryBuilder selectAllFrom() {
+        this.append("SELECT * FROM " + this.table + " ");
         return this;
     }
 
@@ -43,7 +47,12 @@ public class PostgresqlQueryBuilder extends QueryBuilder {
     }
 
     @Override
-    public final QueryBuilder selectAllFrom(String schema, String table) {
-        return this.selectAllFrom(schema + "." + table);
+    public QueryBuilder merge(String s, String... strings) {
+        return null;
+    }
+
+    @Override
+    public final QueryBuilder selectAllFrom(String schema) {
+        return this.selectAllFrom(schema + "." + this.table);
     }
 }

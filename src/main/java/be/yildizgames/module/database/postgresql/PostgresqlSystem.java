@@ -58,8 +58,8 @@ public class PostgresqlSystem extends BaseDatabaseSystem {
     }
 
     @Override
-    public QueryBuilder createBuilder() {
-        return new PostgresqlQueryBuilder();
+    public QueryBuilder createBuilder(String table) {
+        return new PostgresqlQueryBuilder(table);
     }
 
     @Override
