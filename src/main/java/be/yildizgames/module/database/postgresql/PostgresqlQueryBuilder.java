@@ -24,19 +24,27 @@
 package be.yildizgames.module.database.postgresql;
 
 import be.yildizgames.module.database.QueryBuilder;
+import be.yildizgames.module.database.TableSchema;
 
 /**
  * @author Grégory Van den Borre
  */
 class PostgresqlQueryBuilder extends QueryBuilder {
 
-    PostgresqlQueryBuilder(String table) {
+    PostgresqlQueryBuilder(TableSchema table) {
         super(table);
     }
 
     @Override
     public QueryBuilder selectAllFrom() {
         this.append("SELECT * FROM " + this.table + " ");
+        return this;
+    }
+
+    @Override
+    public QueryBuilder select(String... columns) {
+        var c = String.join(", ", columns);
+        this.append("SELECT " + c + " FROM " + table.getTableName() + " ");
         return this;
     }
 
@@ -51,8 +59,4 @@ class PostgresqlQueryBuilder extends QueryBuilder {
         return null;
     }
 
-    @Override
-    public final QueryBuilder selectAllFrom(String schema) {
-        return this.selectAllFrom(schema + "." + this.table);
-    }
 }

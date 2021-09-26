@@ -28,6 +28,7 @@ import be.yildizgames.module.database.BaseDatabaseSystem;
 import be.yildizgames.module.database.DatabaseConnectionProviderFactory;
 import be.yildizgames.module.database.DriverProvider;
 import be.yildizgames.module.database.QueryBuilder;
+import be.yildizgames.module.database.TableSchema;
 import org.postgresql.Driver;
 
 /**
@@ -58,7 +59,7 @@ public class PostgresqlSystem extends BaseDatabaseSystem {
     }
 
     @Override
-    public QueryBuilder createBuilder(String table) {
+    public QueryBuilder createBuilder(TableSchema table) {
         return new PostgresqlQueryBuilder(table);
     }
 
