@@ -22,11 +22,10 @@
  *
  */
 
-open module be.yildizgames.module.database.postgresql {
+module be.yildizgames.module.database.postgresql {
+
     requires java.sql;
-
     requires be.yildizgames.module.database;
-
     requires org.postgresql.jdbc;
 
     provides be.yildizgames.module.database.DatabaseSystemRegisterer

@@ -41,7 +41,6 @@ class PostgresqlSystemTest {
     @Nested
     class Support {
 
-        @Disabled
         @Test
         void happyFlow() {
             PostgresqlSystem.support();

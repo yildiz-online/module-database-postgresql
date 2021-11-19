@@ -55,12 +55,12 @@
     <dependency>
       <groupId>be.yildiz-games</groupId>
       <artifactId>module-database</artifactId>
-      <version>3.2.5</version>
+      <version>3.2.6-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>org.postgresql</groupId>
       <artifactId>postgresql</artifactId>
-      <version>42.2.24</version>
+      <version>42.3.1</version>
     </dependency>
     <dependency>
       <groupId>org.junit.jupiter</groupId>
