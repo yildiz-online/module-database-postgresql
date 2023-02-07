@@ -1,7 +1,7 @@
 /*
  * This file is part of the Yildiz-Engine project, licenced under the MIT License  (MIT)
  *
- *  Copyright (c) 2019 Grégory Van den Borre
+ *  Copyright (c) 2019-2023 Grégory Van den Borre
  *
  *  More infos available: https://engine.yildiz-games.be
  *
@@ -22,7 +22,7 @@
  *
  */
 
-module be.yildizgames.module.database.postgresql {
+open module be.yildizgames.module.database.postgresql {
 
     requires java.sql;
     requires be.yildizgames.module.database;
